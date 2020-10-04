@@ -123,7 +123,8 @@ public class MainViewController {
        });
 
         listview.setOnMouseClicked(event -> {
-            ArrayList<FileFreq> listOfLinks = uniqueSets.get(listview.getSelectionModel().getSelectedItem());
+            String[] select = (listview.getSelectionModel().getSelectedItem()).toString().split("[:]");
+            ArrayList<FileFreq> listOfLinks = uniqueSets.get(select[0]);
             ListView<FileFreq> popupListView = new ListView<>();
             LinkedHashMap<FileFreq,String> lookupTable = new LinkedHashMap<>();
 
